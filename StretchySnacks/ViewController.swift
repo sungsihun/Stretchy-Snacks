@@ -14,6 +14,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var plusButton: UIButton!
   @IBOutlet weak var navBarHeightConstraint: NSLayoutConstraint!
   
+  @IBOutlet weak var tableView: UITableView!
   
   var isExpanded = false
   var height: CGFloat?
@@ -28,15 +29,17 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
+
+
     stackView.addArrangedSubview(imageView1)
     stackView.addArrangedSubview(imageView2)
     stackView.addArrangedSubview(imageView3)
     stackView.addArrangedSubview(imageView4)
     stackView.addArrangedSubview(imageView5)
 
+    // imageView 1
     
+    imageView1.image = UIImage(named: "oreos")
     imageView1.backgroundColor = .red
     imageView1.translatesAutoresizingMaskIntoConstraints = false
 
@@ -44,7 +47,9 @@ class ViewController: UIViewController {
     imageView1.rightAnchor.constraint(equalTo: imageView2.leftAnchor).isActive = true
     imageView1.heightAnchor.constraint(equalTo: stackView.heightAnchor).isActive = true
     
-    
+    // imageView 2
+
+    imageView2.image = UIImage(named: "pizza_pockets")
     imageView2.backgroundColor = .orange
     imageView2.translatesAutoresizingMaskIntoConstraints = false
     
@@ -52,6 +57,9 @@ class ViewController: UIViewController {
     imageView2.rightAnchor.constraint(equalTo: imageView3.leftAnchor).isActive = true
     imageView2.heightAnchor.constraint(equalTo: stackView.heightAnchor).isActive = true
     
+    // imageView 3
+    
+    imageView3.image = UIImage(named: "pop_tarts")
     imageView3.backgroundColor = .yellow
     imageView3.translatesAutoresizingMaskIntoConstraints = false
     
@@ -59,6 +67,9 @@ class ViewController: UIViewController {
     imageView3.rightAnchor.constraint(equalTo: imageView4.leftAnchor).isActive = true
     imageView3.heightAnchor.constraint(equalTo: stackView.heightAnchor).isActive = true
   
+    // imageView 4
+    
+    imageView4.image = UIImage(named: "popsicle")
     imageView4.backgroundColor = .blue
     imageView4.translatesAutoresizingMaskIntoConstraints = false
     
@@ -66,6 +77,9 @@ class ViewController: UIViewController {
     imageView4.rightAnchor.constraint(equalTo: imageView5.leftAnchor).isActive = true
     imageView4.heightAnchor.constraint(equalTo: stackView.heightAnchor).isActive = true
     
+    // imageView 5
+    
+    imageView5.image = UIImage(named: "ramen")
     imageView5.backgroundColor = .green
     imageView5.translatesAutoresizingMaskIntoConstraints = false
     
@@ -73,6 +87,8 @@ class ViewController: UIViewController {
     imageView5.rightAnchor.constraint(equalTo: stackView.rightAnchor).isActive = true
     imageView5.heightAnchor.constraint(equalTo: stackView.heightAnchor).isActive = true
 
+    // stackView
+    
     stackView.isHidden = true
     stackView.backgroundColor = .black
     stackView.axis = .horizontal
@@ -84,6 +100,8 @@ class ViewController: UIViewController {
     stackView.bottomAnchor.constraint(equalTo: self.navBar.bottomAnchor).isActive = true
     stackView.rightAnchor.constraint(equalTo: self.navBar.rightAnchor).isActive = true
     stackView.topAnchor.constraint(equalTo: self.navBar.topAnchor, constant: 50).isActive = true
+    
+
   }
 
 
@@ -102,7 +120,7 @@ class ViewController: UIViewController {
       angle = CGFloat.pi/4
     } else {
       stackView.isHidden = true
-      height = CGFloat(64.0)
+      height = CGFloat(44.0)
       angle = CGFloat.pi/2
     }
     
